@@ -1,6 +1,6 @@
 export const Card = (props) => {
   return (
-    <div className="col-sm-12 card-main row gx-4">
+    <div className="col-sm-12 card-main row gx-4 gy-2">
       <div className="col-sm-12 col-md-4 col-lg-4 flexbox">
         <img src={props.data.image} alt="Image" className="card-img" />
       </div>
@@ -10,7 +10,7 @@ export const Card = (props) => {
           {props.data.title}
           </div>
           <div className="col-sm-12 ">
-            {props.data.rating}
+          <span class="badge bg-secondary"> {props.data.rating} </span>
           </div>
           <div className="col-sm-12"> {props.data.category}</div>
           <div className="col-sm-12">{props.data.description}</div>

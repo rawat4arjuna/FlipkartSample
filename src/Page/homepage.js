@@ -9,19 +9,10 @@ const FilterColumn = React.lazy(() => import("../Component/FilterColumn"));
 
 export default function Home() {
   let { state, dispatch } = React.useContext(ContextOne);
-  // React.useEffect(
-  //   () => {
-  //     dispatch({ type: "filter" ,payload:[]});
-  //   },
-  //   [state.data]
-  // );
-  const [startTransition, isPending] = useTransition({    timeoutMs: 3000  });
   const renderThings = (things) => {
-    startTransition(() => {
     return things.map((thing) => {
       return <Card data={thing}/>;
     });
-  })
   };
   return (
     <>
@@ -34,7 +25,7 @@ export default function Home() {
             <FilterColumn></FilterColumn>
           </LeftPanel>
             <RightPanel>
-            {isPending ? " Loading..." : null}
+              <h4>{state.data.length} products found</h4>
               {renderThings(state.data)}</RightPanel>
           </Suspense>
         </Col>
