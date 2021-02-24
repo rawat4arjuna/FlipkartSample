@@ -8,14 +8,14 @@ const Col = (props) => {
 
 const LeftPanel = (props) => {
   return (
-    <div className="col-sm-12 col-md-4 col-lg-3">
+    <div className="col-sm-12 col-md-6 col-lg-4 rightpanel">
       <div className="row con-padding">{props.children}</div>
     </div>
   );
 };
 const RightPanel = (props) => {
     return (
-      <div className="col-sm-12 col-md-8 col-lg-8 ">
+      <div className="col-sm-12 col-md-6 col-lg-8 rightpanel">
         <div className="row con-padding">{props.children}</div>
       </div>
     );

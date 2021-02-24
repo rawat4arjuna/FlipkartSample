@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState ,useEffect } from "react";
 import { ContextOne } from "../Context/AppContext";
 import { userFilter } from "../Context/userAction";
-import { ConvertPrice } from "../Context/Utils";
 export default function PriceBlock() {
   let { state, dispatch } = useContext(ContextOne);
   const [min, setMin] = useState(0);
-  const [max, setMax] = useState(100);
+  const [max, setMax] = useState(10000000);
   let [error, setError] = useState("");
   const filterMin = (e) => {
     if (Number(e.target.value) > Number(max)) {
@@ -28,6 +27,8 @@ export default function PriceBlock() {
     filterData.price = [min, max];
     dispatch({ type: "combination", currency: state.currency, filter: filterData });
     userFilter(state, dispatch);
+    // setMin(0)
+    // setMax(1000000)
   };
   return (
     <div className="row">
@@ -40,7 +41,8 @@ export default function PriceBlock() {
           <input
             type="number"
             class="form-control"
-            defaultvalue={min}
+            defaultValue={min}
+            value={min}
             aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-sm"
             onChange={(e) => {
@@ -56,7 +58,8 @@ export default function PriceBlock() {
           </span>
           <input
             type="number"
-            defaultvalue={max}
+            defaultValue={max}
+            value={max}
             class="form-control"
             aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-sm"

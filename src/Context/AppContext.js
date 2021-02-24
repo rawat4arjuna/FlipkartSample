@@ -41,7 +41,6 @@ let reducer = (state, action) => {
     case "currency":
       return {
         ...state,
-        data: action.payload,
         currency: action.currency,
         err: action.err | null,
       };

@@ -1,20 +1,30 @@
+import React, { useContext } from "react";
+import { ContextOne } from "../Context/AppContext";
 export default function Navbar(props) {
+  let {dispatch } = useContext(ContextOne);
+  const changeCurrency =(e)=>{
+    dispatch({ type: "currency", currency: e.target.value})
+  }
   return (
-    <nav class="navbar navbar-light bg-light" id="navbar">
+    <header class="navbar header" id="navbar">
       <div class="container-fluid">
-        <a class="navbar-brand">FlipKart</a>
+        <span class="navbar-brand head-title">FlipKart</span>
         <form class="d-flex">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">
-            Search
-          </button>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            onChange={(e) => {
+              changeCurrency(e)
+            }}
+          >
+            <option value="USD" selected>
+              USD
+            </option>
+            <option value="INR">INR</option>
+            <option value="EURO">EURO</option>
+          </select>
         </form>
       </div>
-    </nav>
+    </header>
   );
 }

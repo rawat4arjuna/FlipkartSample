@@ -42,3 +42,28 @@ font-size: 12px;
 vertical-align: middle;
 background-color: #388e3c;
 }
+div.rightpanel{
+  background:#e7e7e7
+}
+.buttonmove{
+  color:#4d4c4c9c !important;
+}
+.slider-img{
+  height:400px;
+
+}
+.padding-2{
+  padding:10px !important;
+}
+.padding-4{
+  padding:20px !important;
+}
+.head-title{
+  color: blanchedalmond;
+font-size: 30px;
+font-weight: bold;
+font-style: italic;
+}
+.header{
+  background-color:black !important;
+}
