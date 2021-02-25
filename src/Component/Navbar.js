@@ -8,7 +8,7 @@ export default function Navbar(props) {
   return (
     <header className="navbar header" id="navbar">
       <div className="container-fluid">
-        <span className="navbar-brand head-title">FlipKart</span>
+        <span className="navbar-brand head-title">Ironlist</span>
         <form className="d-flex">
           <select
             className="form-select"
