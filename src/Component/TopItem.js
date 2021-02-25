@@ -11,7 +11,7 @@ export const Topslider = () =>{
                 return <div className="carousel-item active ">
                <div className=" w-100 flexbox padding-4"  >
                 <img src={item.image} className=" slider-img" alt="..."/>
-                <h5>{item.title}</h5>
+                <h5 className="pt-4">{item.title}</h5>
                 </div>
                 <div className="carousel-caption d-none d-md-block">
                  
@@ -21,7 +21,7 @@ export const Topslider = () =>{
             return <div className="carousel-item ">
                 <div className=" w-100 flexbox padding-4 "  >
                 <img src={item.image} className=" slider-img" alt="..."/>
-                <h5>{item.title}</h5>
+                <h5 className="pt-4">{item.title}</h5>
                 </div>
            
             <div className="carousel-caption d-none d-md-block">
