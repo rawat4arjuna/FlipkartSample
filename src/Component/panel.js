@@ -15,7 +15,7 @@ const LeftPanel = (props) => {
 };
 const RightPanel = (props) => {
     return (
-      <div className="col-sm-12 col-md-6 col-lg-8">
+      <div className="col-sm-12 col-md-8 col-lg-8">
         <div className="row con-padding" style={{margin:'10px',background:'#ffffff'}}>{props.children}</div>
       </div>
     );

@@ -28,12 +28,12 @@ export default function FilterColumn(props) {
       {" "}
       <div className="col-sm-12 gy-2">
       </div>
+      <div className="col-sm-12 py-4">
       <div className="col-sm-12 gy-2">
-      <div className="col-sm-12 ">
         CATEGORIES
       </div>
         <select
-          className="user-form-select col-sm-12"
+          className="user-form-select user-sm col-sm-12"
           aria-label="Default select example"
           onChange={(e) => {
             onSelectCategory(state, e);

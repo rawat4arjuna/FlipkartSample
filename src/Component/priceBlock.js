@@ -43,9 +43,9 @@ export default function PriceBlock() {
   return (
     <div className="row">
       <div className="col-sm-12">{error}</div>
-      <div className="col-sm-6">
+      <div className="col-sm-12 col-md-6">
         <div className="input-group input-group-sm mb-3">
-          <span className="input-group-text" id="inputGroup-sizing-sm">
+          <span className="input-group-text" id="inputGroup-sizing-sm" style={{color:'#fff' ,background:'#000'}}>
             Min
           </span>
            <select
@@ -59,9 +59,9 @@ export default function PriceBlock() {
         </select>
         </div>
       </div>
-      <div className="col-sm-6">
+      <div className="col-sm-12 col-md-6">
         <div className="input-group input-group-sm mb-3">
-          <span className="input-group-text" id="inputGroup-sizing-sm">
+          <span className="input-group-text" id="inputGroup-sizing-sm" style={{color:'#fff' ,background:'#000'}}>
             Max
           </span>
           <select

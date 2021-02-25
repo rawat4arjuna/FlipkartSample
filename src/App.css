@@ -83,6 +83,12 @@ font-size: 14px;
 font-size: 20px;
 font-weight: lighter;
 }
+.card-price{
+  font-size :16px;
+  font-weight: 600;
+  color: #616160
+
+}
 .user-form-select{
   display: block;
   padding: .375rem 2.25rem .375rem .75rem;
@@ -103,3 +109,11 @@ font-weight: lighter;
 }
 
 /* ------------------------------------------------------------- */
+@media only screen and (max-width: 400px) {
+  .slider-img{
+    height:200px;
+  }
+  .user-sm{
+    width:100%
+  }
+}
