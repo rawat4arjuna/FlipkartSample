@@ -26,7 +26,7 @@ export default function Home() {
       <Col>
       <Topslider/>
         </Col>
-        <Col>
+        <Col className={"rightpanel"}>
           <Suspense fallback={<div>Loading...</div>}>
           <LeftPanel>
             {" "}

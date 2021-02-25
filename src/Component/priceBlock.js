@@ -1,35 +1,47 @@
 import React, { useContext, useState ,useEffect } from "react";
 import { ContextOne } from "../Context/AppContext";
 import { userFilter } from "../Context/userAction";
+import { ConvertPrice } from "../Context/Utils";
 export default function PriceBlock() {
   let { state, dispatch } = useContext(ContextOne);
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(10000000);
+  let [min, setMin] = useState(0);
+  let [max, setMax] = useState(ConvertPrice(state.currency,800).toFixed(2));
   let [error, setError] = useState("");
   const filterMin = (e) => {
     if (Number(e.target.value) > Number(max)) {
       setError("invalid Min price");
     } else {
       setError("");
-      setMin(e.target.value);
+      setMin(min=e.target.value);
     }
+    console.log("0000000000000",min,e.target.value)
+    onCheck()
   };
   const filterMax = (e) => {
     if (Number(e.target.value) < Number(min)) {
       setError("invalid Max price");
     } else {
       setError("");
-      setMax(e.target.value);
+      setMax(max=e.target.value);
+    }
+    onCheck()
+  };
+  const onCheck = async () => {
+    console.log("00000",min,max)
+    if(Number(min) < Number(max))
+    {
+      let filterData = state.filter;
+      filterData.price = [min, max];
+      dispatch({ type: "combination", currency: state.currency, filter: filterData });
+      userFilter(state, dispatch);
     }
   };
-  const onSubmit = async () => {
-    let filterData = state.filter;
-    filterData.price = [min, max];
-    dispatch({ type: "combination", currency: state.currency, filter: filterData });
-    userFilter(state, dispatch);
-    // setMin(0)
-    // setMax(1000000)
-  };
+  const CreateSelector = ()=>{
+    const priceArr = [0,50,100,200,300,400,500,600,700,800];
+    return priceArr.map(item=>{
+      return <option value={ConvertPrice(state.currency,item).toFixed(2)}>{ConvertPrice(state.currency,item).toFixed(2)}</option>
+    })
+  }
   return (
     <div className="row">
       <div className="col-sm-12">{error}</div>
@@ -38,17 +50,15 @@ export default function PriceBlock() {
           <span class="input-group-text" id="inputGroup-sizing-sm">
             Min
           </span>
-          <input
-            type="number"
-            class="form-control"
-            defaultValue={min}
-            value={min}
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-sm"
-            onChange={(e) => {
-              filterMin(e);
-            }}
-          />
+           <select
+          class="user-form-select col-auto"
+          value= {min}
+          onChange={(e) => {
+            filterMin(e);
+          }}
+        >
+          {CreateSelector()}
+        </select>
         </div>
       </div>
       <div className="col-sm-6">
@@ -56,28 +66,17 @@ export default function PriceBlock() {
           <span class="input-group-text" id="inputGroup-sizing-sm">
             Max
           </span>
-          <input
-            type="number"
-            defaultValue={max}
-            value={max}
-            class="form-control"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-sm"
-            onChange={(e) => {
-              filterMax(e);
-            }}
-          />
-        </div>
-      </div>
-      <div className="col-sm-12">
-        <button
-          className="btn btn-primary"
-          onClick={() => {
-            onSubmit();
+          <select
+          class="user-form-select"
+          aria-label="Default select example"
+          onChange={(e) => {
+            filterMax(e);
           }}
+          value={max}
         >
-          Set Range
-        </button>
+          {CreateSelector()}
+        </select>
+        </div>
       </div>
     </div>
   );

@@ -33,7 +33,7 @@ export default function FilterColumn(props) {
         CATEGORIES
       </div>
         <select
-          class="form-select"
+          class="user-form-select col-sm-12"
           aria-label="Default select example"
           onChange={(e) => {
             onSelectCategory(state, e);
