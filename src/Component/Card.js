@@ -13,7 +13,7 @@ export const Card = (props) => {
           {props.data.title}
           </div>
           <div className="col-sm-12 ">
-          <span class="badge bg-secondary"> {props.data.rating} <span>&#9733;</span> </span>
+          <span className="badge bg-secondary"> {props.data.rating} <span>&#9733;</span> </span>
           </div>
           <div className="col-sm-12 card-category"> {props.data.category}</div>
           <div className="col-sm-12 card-des" >{props.data.description}</div>

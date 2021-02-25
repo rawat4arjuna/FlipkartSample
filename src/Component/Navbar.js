@@ -6,12 +6,12 @@ export default function Navbar(props) {
     dispatch({ type: "currency", currency: e.target.value})
   }
   return (
-    <header class="navbar header" id="navbar">
-      <div class="container-fluid">
-        <span class="navbar-brand head-title">FlipKart</span>
-        <form class="d-flex">
+    <header className="navbar header" id="navbar">
+      <div className="container-fluid">
+        <span className="navbar-brand head-title">FlipKart</span>
+        <form className="d-flex">
           <select
-            class="form-select"
+            className="form-select"
             aria-label="Default select example"
             onChange={(e) => {
               changeCurrency(e)

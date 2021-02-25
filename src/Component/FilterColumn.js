@@ -33,7 +33,7 @@ export default function FilterColumn(props) {
         CATEGORIES
       </div>
         <select
-          class="user-form-select col-sm-12"
+          className="user-form-select col-sm-12"
           aria-label="Default select example"
           onChange={(e) => {
             onSelectCategory(state, e);
@@ -47,30 +47,30 @@ export default function FilterColumn(props) {
       </div>
       <div className="col-sm-12 gy-2">
       <div className="col-sm-12">CUSTOMER RATING</div>
-        <div class="form-check">
+        <div className="form-check">
           
           <fieldset id="group2" onChange={(e)=>{filterRating(state,e)}}>
             <div className="col-sm-12 gy-2 gx-4">
-            <input class="form-check-input" type="radio" value="4" name="group2" />
-            <label class="form-check-label" for="flexRadioDefault1">
+            <input className="form-check-input" type="radio" value="4" name="group2" />
+            <label className="form-check-label" for="flexRadioDefault1">
            4<span>&#9733;</span> & above
           </label>
             </div>
             <div className="col-sm-12 gy-2 gx-2">
-            <input  class="form-check-input"type="radio" value="3" name="group2" />
-            <label class="form-check-label" for="flexRadioDefault1">
+            <input  className="form-check-input"type="radio" value="3" name="group2" />
+            <label className="form-check-label" for="flexRadioDefault1">
            3<span>&#9733;</span> & above
           </label>
           </div>
           <div className="col-sm-12 gy-2 gx-2 ">
-            <input  class="form-check-input" type="radio" value="2" name="group2" />
-            <label class="form-check-label" for="flexRadioDefault1">
+            <input  className="form-check-input" type="radio" value="2" name="group2" />
+            <label className="form-check-label" for="flexRadioDefault1">
            2<span>&#9733;</span> & above
           </label>
           </div>
           <div className="col-sm-12 gy-2 gx-2 ">
-            <input  class="form-check-input" type="radio" value="1" name="group2" />
-            <label class="form-check-label" for="flexRadioDefault1">
+            <input  className="form-check-input" type="radio" value="1" name="group2" />
+            <label className="form-check-label" for="flexRadioDefault1">
            1<span>&#9733;</span> & above
           </label>
           </div>

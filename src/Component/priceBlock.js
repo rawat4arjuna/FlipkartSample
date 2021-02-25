@@ -1,4 +1,4 @@
-import React, { useContext, useState ,useEffect } from "react";
+import React, { useContext, useState  } from "react";
 import { ContextOne } from "../Context/AppContext";
 import { userFilter } from "../Context/userAction";
 import { ConvertPrice } from "../Context/Utils";
@@ -14,7 +14,6 @@ export default function PriceBlock() {
       setError("");
       setMin(min=e.target.value);
     }
-    console.log("0000000000000",min,e.target.value)
     onCheck()
   };
   const filterMax = (e) => {
@@ -27,7 +26,6 @@ export default function PriceBlock() {
     onCheck()
   };
   const onCheck = async () => {
-    console.log("00000",min,max)
     if(Number(min) < Number(max))
     {
       let filterData = state.filter;
@@ -46,12 +44,12 @@ export default function PriceBlock() {
     <div className="row">
       <div className="col-sm-12">{error}</div>
       <div className="col-sm-6">
-        <div class="input-group input-group-sm mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-sm">
+        <div className="input-group input-group-sm mb-3">
+          <span className="input-group-text" id="inputGroup-sizing-sm">
             Min
           </span>
            <select
-          class="user-form-select col-auto"
+          className="user-form-select col-auto"
           value= {min}
           onChange={(e) => {
             filterMin(e);
@@ -62,12 +60,12 @@ export default function PriceBlock() {
         </div>
       </div>
       <div className="col-sm-6">
-        <div class="input-group input-group-sm mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-sm">
+        <div className="input-group input-group-sm mb-3">
+          <span className="input-group-text" id="inputGroup-sizing-sm">
             Max
           </span>
           <select
-          class="user-form-select"
+          className="user-form-select"
           aria-label="Default select example"
           onChange={(e) => {
             filterMax(e);
